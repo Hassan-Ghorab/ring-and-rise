@@ -65,7 +65,7 @@ html {
 
 /* Navbar */
 .navbar {
-  background: var(--main-bg);
+  background: var(--boxes-colors);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -509,7 +509,7 @@ html {
   text-align: center;
   font-size: 1.5rem;
   padding: 2rem 0;
-  background: var(--main-bg);
+  background: var(--boxes-colors);
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Top shadow */
 }
 
