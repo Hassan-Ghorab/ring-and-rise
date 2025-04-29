@@ -5,6 +5,7 @@
   --light-color: #1f2937;
   --dark-color: #fff;
   --text-color: #fff;
+  --boxes-colors: #ffff;
 }
 
 /* Base styles for the body */
@@ -22,6 +23,8 @@ body.dark-theme {
   --light-color: #fff;
   --dark-color: #000;
   --text-color: #222;
+
+  --boxes-colors: #1f2937;
 }
 
 /* Base Reset */
@@ -188,7 +191,7 @@ html {
 
 /* Hero Section */
 .hero {
-  padding: 10rem 0;
+  padding: 8rem 0;
 }
 
 .hero .container,
@@ -295,7 +298,8 @@ html {
   flex: 1;
   padding: 20px;
   border-radius: 10px;
-  color: var(--light-color);
+  background-color: var(--light-color);
+  color: var(--main-color);
 }
 
 .value-box h2 {
@@ -311,13 +315,14 @@ html {
 }
 
 .value-box.respect {
-  background-color: var(--white-color);
+  background-color: var(--light-color);
+  color: var(--main-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .value-box.respect h2,
 .value-box.respect p {
-  color: var(--light-color);
+  color: var(--main-color);
 }
 
 .continuous {
@@ -344,7 +349,6 @@ html {
 /* Mobile First - Basic Style */
 .services {
   padding: 8rem 0;
-  background-color: var(--white-color);
 }
 
 .services h2 {
@@ -365,6 +369,7 @@ html {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+  background-color: var(--boxes-colors);
 }
 
 .service-item .icon {
@@ -415,7 +420,7 @@ html {
 /* Contact Form */
 .contact-form,
 .contact-info {
-  background-color: var(--white-color);
+  background-color: var(--boxes-colors);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   padding: 20px;
   border-radius: 10px;
