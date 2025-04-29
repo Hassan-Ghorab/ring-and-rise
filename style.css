@@ -5,7 +5,7 @@
   --light-color: #1f2937;
   --dark-color: #fff;
   --text-color: #fff;
-  --boxes-colors: #ffff;
+  --boxes-colors: #fff;
 }
 
 /* Base styles for the body */
@@ -23,7 +23,6 @@ body.dark-theme {
   --light-color: #fff;
   --dark-color: #000;
   --text-color: #222;
-
   --boxes-colors: #1f2937;
 }
 
