@@ -82,8 +82,9 @@ html {
 
 .menu-toggle {
   background: none;
+  color: var(--light-color);
   border: none;
-  font-size: 2rem;
+  font-size: 3rem;
   cursor: pointer;
 }
 
@@ -105,7 +106,7 @@ html {
   right: -100%;
   width: 70%;
   height: 100%;
-  background: var(--dark-color);
+  background: var(--main-bg);
   color: var(--light-color);
   padding: 5rem 2rem;
   transition: right 0.3s ease;
@@ -125,8 +126,8 @@ html {
 }
 
 .nav-links a {
-  color: var(--main-bg);
-  font-size: 1rem;
+  color: var(--light-color);
+  font-size: 2rem;
   text-decoration: none;
 }
 
@@ -165,7 +166,7 @@ html {
 .close-btn {
   background: none;
   border: none;
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: var(--white-color);
   position: absolute;
   top: 1rem;
@@ -505,4 +506,31 @@ html {
   padding: 2rem 0;
   background: var(--main-bg);
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Top shadow */
+}
+
+.year {
+  font-weight: normal;
+}
+
+.section {
+  opacity: 0;
+  transition: all 0.7s ease-out;
+}
+
+.from-top {
+  transform: translateY(-50px);
+}
+.from-left {
+  transform: translateX(-50px);
+}
+.from-right {
+  transform: translateX(50px);
+}
+.from-bottom {
+  transform: translateY(50px);
+}
+
+.visible {
+  opacity: 1;
+  transform: translate(0, 0);
 }

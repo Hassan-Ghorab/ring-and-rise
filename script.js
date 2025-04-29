@@ -1,6 +1,8 @@
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 const closeBtn = document.getElementById("closeBtn");
+const hiddenElements = document.querySelectorAll(".hidden");
+const yearEl = document.querySelector(".year");
 
 menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("open");
@@ -60,3 +62,23 @@ themeToggleButton.addEventListener("click", () => {
     localStorage.setItem("theme", "dark"); // Store dark mode in localStorage
   }
 });
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      } else {
+        entry.target.classList.remove("visible");
+      }
+    });
+  },
+  {
+    threshold: 0.1,
+  }
+);
+
+hiddenElements.forEach((el) => observer.observe(el));
+
+const year = new Date().getFullYear();
+yearEl.innerText = year;
