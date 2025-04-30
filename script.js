@@ -97,6 +97,34 @@ window.addEventListener("load", () => {
     loader.style.opacity = "0";
     content.style.visibility = "visible";
 
-    setTimeout(() => loader.remove(), 500); 
-  }, 2500); 
+    setTimeout(() => loader.remove(), 500);
+  }, 2500);
+});
+
+const sections = document.querySelectorAll(".section");
+const navLinksEl = document.querySelectorAll(".nav-link");
+
+const linksObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      const id = entry.target.getAttribute("id");
+      const link = document.querySelector(`.nav-link[href="#${id}"]`);
+
+      if (entry.isIntersecting) {
+        navLinksEl.forEach((navLink) => navLink.classList.remove("active"));
+
+        // ✅ Avoid error if link is not found
+        if (link) {
+          link.classList.add("active");
+        }
+      }
+    });
+  },
+  {
+    threshold: 0.6, // 60% of section in view
+  }
+);
+
+sections.forEach((section) => {
+  linksObserver.observe(section);
 });

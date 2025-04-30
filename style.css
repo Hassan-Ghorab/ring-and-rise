@@ -10,9 +10,44 @@
   --section-padding: 5rem 0;
 }
 
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--section-padding-scroll);
+  font-size: 62.5%;
+}
+
+*:focus-visible {
+  outline: transparent;
+  box-shadow: 0 0 0 0.2rem rgba(11, 123, 183, 0.699) !important;
+}
+
+::-webkit-scrollbar {
+  width: 0.9rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #cfcdcd;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+  border-radius: 1000px;
+  height: 30rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--secondary-color);
+}
+
+a {
+  text-decoration: none;
 }
 
 /* Base styles for the body */
@@ -31,17 +66,6 @@ body.dark-theme {
   --dark-color: #000;
   --text-color: #222;
   --boxes-colors: #1f2937;
-}
-
-/* Base Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
 }
 
 /* Theme Toggle Button */
@@ -140,6 +164,16 @@ html {
   text-decoration: none;
 }
 
+.nav-links a:hover,
+.nav-links a:active,
+.nav-links a:focus {
+  color: var(--main-color);
+}
+
+.nav-link.active {
+  color: var(--main-color);
+}
+
 /* Desktop view */
 @media (min-width: 768px) {
   .menu-toggle {
@@ -235,7 +269,7 @@ html {
 }
 
 .hero-btn:hover {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
 }
 
 .hero-image img,
@@ -306,6 +340,11 @@ html {
   border-radius: 10px;
   background-color: var(--light-color);
   color: var(--main-color);
+  transition: all 0.3s ease;
+}
+
+.value-box:hover {
+  transform: scale(1.05); /* Slightly bigger */
 }
 
 .value-box h2 {
@@ -376,6 +415,11 @@ html {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   background-color: var(--boxes-colors);
+  transition: all 0.3s ease;
+}
+
+.service-item:hover {
+  transform: scale(1.05); /* Slightly bigger */
 }
 
 .service-item .icon {
