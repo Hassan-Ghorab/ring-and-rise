@@ -6,6 +6,12 @@
   --dark-color: #fff;
   --text-color: #fff;
   --boxes-colors: #fff;
+  --section-padding: 5rem 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding: var(--section-padding);
 }
 
 /* Base styles for the body */
@@ -347,7 +353,7 @@ html {
 
 /* Mobile First - Basic Style */
 .services {
-  padding: 8rem 0;
+  padding: var(--section-padding);
 }
 
 .services h2 {
@@ -401,7 +407,7 @@ html {
 }
 
 .contact {
-  padding: 0 0 8rem;
+  padding: var(--section-padding);
 }
 
 .contact-title {
@@ -537,4 +543,35 @@ html {
 .visible {
   opacity: 1;
   transform: translate(0, 0);
+}
+
+/* Fullscreen loader */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--main-bg);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Logo animation */
+.logo-spinner {
+  width: 100px; /* adjust size as needed */
+  animation: floatUpDown 1.5s ease-in-out infinite;
+}
+
+/* Keyframe for up and down movement */
+@keyframes floatUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }

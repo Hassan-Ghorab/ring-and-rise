@@ -1,5 +1,6 @@
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
+const navLinksContainer = document.querySelector("ul");
 const closeBtn = document.getElementById("closeBtn");
 const hiddenElements = document.querySelectorAll(".hidden");
 const yearEl = document.querySelector(".year");
@@ -10,6 +11,14 @@ menuToggle.addEventListener("click", () => {
 
 closeBtn.addEventListener("click", () => {
   navLinks.classList.remove("open");
+});
+
+const allLinks = navLinksContainer.querySelectorAll("a");
+
+allLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+  });
 });
 
 // Get the theme toggle button and the body
@@ -79,3 +88,11 @@ hiddenElements.forEach((el) => observer.observe(el));
 
 const year = new Date().getFullYear();
 yearEl.innerText = year;
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const loader = document.getElementById("loader");
+    loader.style.opacity = "0";
+    setTimeout(() => loader.remove(), 500);
+  }, 2000); 
+});
