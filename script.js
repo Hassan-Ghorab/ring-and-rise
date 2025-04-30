@@ -92,7 +92,11 @@ yearEl.innerText = year;
 window.addEventListener("load", () => {
   setTimeout(() => {
     const loader = document.getElementById("loader");
+    const content = document.getElementById("main-content");
+
     loader.style.opacity = "0";
-    setTimeout(() => loader.remove(), 500);
+    content.style.visibility = "visible";
+
+    setTimeout(() => loader.remove(), 500); 
   }, 2000); 
 });
