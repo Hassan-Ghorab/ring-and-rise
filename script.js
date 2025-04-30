@@ -98,5 +98,5 @@ window.addEventListener("load", () => {
     content.style.visibility = "visible";
 
     setTimeout(() => loader.remove(), 500); 
-  }, 2000); 
+  }, 2500); 
 });

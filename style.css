@@ -6,12 +6,13 @@
   --dark-color: #fff;
   --text-color: #fff;
   --boxes-colors: #fff;
+  --section-padding-scroll: 90px;
   --section-padding: 5rem 0;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: var(--section-padding);
+  scroll-padding-top: var(--section-padding-scroll);
 }
 
 /* Base styles for the body */
