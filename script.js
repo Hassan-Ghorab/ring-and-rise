@@ -104,27 +104,36 @@ window.addEventListener("load", () => {
 const sections = document.querySelectorAll(".section");
 const navLinksEl = document.querySelectorAll(".nav-link");
 
+// IntersectionObserver to track sections
 const linksObserver = new IntersectionObserver(
   (entries) => {
+    let visibleSectionId = null;
+
     entries.forEach((entry) => {
-      const id = entry.target.getAttribute("id");
-      const link = document.querySelector(`.nav-link[href="#${id}"]`);
-
       if (entry.isIntersecting) {
-        navLinksEl.forEach((navLink) => navLink.classList.remove("active"));
-
-        // ✅ Avoid error if link is not found
-        if (link) {
-          link.classList.add("active");
-        }
+        visibleSectionId = entry.target.getAttribute("id");
       }
     });
+
+    if (visibleSectionId) {
+      // Remove "active" from all nav links
+      navLinksEl.forEach((navLink) => navLink.classList.remove("active"));
+
+      // Add "active" to the link matching visible section
+      const activeLink = document.querySelector(
+        `.nav-link[href="#${visibleSectionId}"]`
+      );
+      if (activeLink) {
+        activeLink.classList.add("active");
+      }
+    }
   },
   {
-    threshold: 0.6, // 60% of section in view
+    threshold: 0.6, // 60% of section must be visible
   }
 );
 
+// Observe each section
 sections.forEach((section) => {
   linksObserver.observe(section);
 });
