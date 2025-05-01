@@ -3,6 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Ring & Rise is the company that you can trust in telecommunications businesses"
+    />
+    <link
+      id="favicon"
+      rel="icon"
+      sizes="100x100"
+      type="image/png"
+      href="./images/logo.png"
+    />
     <title>Ring & Rise</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,14 +26,18 @@
   </head>
   <body>
     <aside id="loader">
-      <img src="./images/logo.png" alt="Loading..." class="logo-spinner" />
+      <img
+        src="./images/logo.png"
+        alt="A loader to be before the content"
+        class="logo-spinner"
+      />
     </aside>
     <main id="main-content">
       <header class="navbar">
         <div class="container">
           <h1 class="logo">
             <a href="./index.html"
-              ><img src="./images/logo.png" alt="" class="logo"
+              ><img src="./images/logo.png" alt="The website logo" class="logo"
             /></a>
           </h1>
 
@@ -40,7 +55,11 @@
               </ul>
             </nav>
             <div class="nav-buttons">
-              <button class="theme-toggle" id="themeToggle">
+              <button
+                class="theme-toggle"
+                id="themeToggle"
+                aria-label="switch color theme"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -59,7 +78,7 @@
         </div>
       </header>
 
-      <article  id="home" class="hero section hidden from-top">
+      <article id="home" class="hero section hidden from-top">
         <div class="container">
           <div class="hero-content">
             <h2>The spark your startup needs to rise and shine</h2>
@@ -79,7 +98,10 @@
       <section class="values section hidden from-top">
         <div class="container">
           <div class="logos">
-            <img src="./images/logos.png" alt="Hubstaff Logo" />
+            <img
+              src="./images/logos.png"
+              alt="logos of the brands we work with"
+            />
           </div>
           <div class="values-container">
             <div class="value-box respect">
@@ -189,6 +211,72 @@
         </div>
       </section>
 
+      <article
+        id="testimonials"
+        class="testimonials"
+        aria-labelledby="testimonial-heading"
+      >
+        <h2 id="testimonial-heading">Testimonials</h2>
+        <p class="subtitle">We Craft Success Stories, Yours Next</p>
+        <p class="description">
+          Your business deserves more than promises – we deliver measurable
+          results.
+        </p>
+
+        <div class="testimonial-list">
+          <!-- Testimonial 1 -->
+          <figure class="testimonial">
+            <video
+              controls
+              preload="metadata"
+              aria-label="Testimonial from Ashley"
+              poster="ashley-thumbnail.jpg"
+            >
+              <source src="ashley.mov" type="video/quicktime" />
+              Your browser does not support the video tag.
+            </video>
+            <figcaption>
+              <strong>Ashley</strong>
+              <span>Chicago, IL</span>
+            </figcaption>
+          </figure>
+
+          <!-- Testimonial 2 -->
+          <figure class="testimonial">
+            <video
+              controls
+              preload="metadata"
+              aria-label="Testimonial from Taylor"
+              poster="taylor-thumbnail.jpg"
+            >
+              <source src="taylor.mov" type="video/quicktime" />
+              Your browser does not support the video tag.
+            </video>
+            <figcaption>
+              <strong>Taylor</strong>
+              <span>Springfield, Missouri</span>
+            </figcaption>
+          </figure>
+
+          <!-- Testimonial 3 -->
+          <figure class="testimonial">
+            <video
+              controls
+              preload="metadata"
+              aria-label="Testimonial from Andrew"
+              poster="andrew-thumbnail.jpg"
+            >
+              <source src="andrew.mov" type="video/quicktime" />
+              Your browser does not support the video tag.
+            </video>
+            <figcaption>
+              <strong>Andrew</strong>
+              <span>Austin, TX</span>
+            </figcaption>
+          </figure>
+        </div>
+      </article>
+
       <section id="contact" class="contact section hidden from-top">
         <h2 class="contact-title">Contact Me</h2>
         <div class="container">
@@ -295,8 +383,6 @@
           </div>
         </div>
       </section>
-
-      <article id="testimonials" class="testimonials section hidden from-top"></article>
 
       <footer class="footer">
         <p>

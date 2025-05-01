@@ -98,7 +98,7 @@ window.addEventListener("load", () => {
     content.style.visibility = "visible";
 
     setTimeout(() => loader.remove(), 500);
-  }, 2500);
+  }, 2000);
 });
 
 const sections = document.querySelectorAll(".section");
