@@ -63,7 +63,7 @@
   transition: 0.5s;
 }
 
-.nav-links li:hover {
+.nav-links li:hover a {
   transform: translate(-5px, -5px);
   box-shadow: 4px 4px 0 0 var(--light-color);
   border-radius: 5px;
@@ -88,6 +88,13 @@
   box-shadow: 4px 4px 0 0 var(--light-color);
   border-radius: 5px;
   padding: 0.5rem;
+}
+
+.nav-link.active li:hover {
+  transform: 0;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
 }
 
 .theme-toggle {

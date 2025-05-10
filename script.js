@@ -86,21 +86,6 @@ const observer = new IntersectionObserver(
 
 hiddenElements.forEach((el) => observer.observe(el));
 
-const year = new Date().getFullYear();
-yearEl.innerText = year;
-
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    const loader = document.getElementById("loader");
-    const content = document.getElementById("main-content");
-
-    loader.style.opacity = "0";
-    content.style.visibility = "visible";
-
-    setTimeout(() => loader.remove(), 500);
-  }, 1000);
-});
-
 const sections = document.querySelectorAll(".section");
 const navLinksEl = document.querySelectorAll(".nav-link");
 
@@ -116,10 +101,8 @@ const linksObserver = new IntersectionObserver(
     });
 
     if (visibleSectionId) {
-      // Remove "active" from all nav links
       navLinksEl.forEach((navLink) => navLink.classList.remove("active"));
 
-      // Add "active" to the link matching visible section
       const activeLink = document.querySelector(
         `.nav-link[href="#${visibleSectionId}"]`
       );
@@ -129,7 +112,7 @@ const linksObserver = new IntersectionObserver(
     }
   },
   {
-    threshold: 0.6,
+    threshold: [0.3, 0.6],
   }
 );
 
@@ -199,4 +182,19 @@ document.addEventListener("DOMContentLoaded", () => {
       interval = setInterval(nextSlide, 10000);
     });
   });
+});
+
+const year = new Date().getFullYear();
+yearEl.innerText = year;
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const loader = document.getElementById("loader");
+    const content = document.getElementById("main-content");
+
+    loader.style.opacity = "0";
+    content.style.visibility = "visible";
+
+    setTimeout(() => loader.remove(), 500);
+  }, 1000);
 });

@@ -126,8 +126,7 @@ p {
 }
 
 @keyframes floatUpDown {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0);
   }
   50% {
@@ -203,7 +202,7 @@ p {
   transition: 0.5s;
 }
 
-.nav-links li:hover {
+.nav-links li:hover a {
   transform: translate(-5px, -5px);
   box-shadow: 4px 4px 0 0 var(--light-color);
   border-radius: 5px;
@@ -228,6 +227,13 @@ p {
   box-shadow: 4px 4px 0 0 var(--light-color);
   border-radius: 5px;
   padding: 0.5rem;
+}
+
+.nav-link.active li:hover {
+  transform: 0;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
 }
 
 .theme-toggle {
@@ -396,7 +402,7 @@ p {
 
 .slider-bullets {
   position: fixed;
-  bottom: 150px;
+  bottom: 110px;
   display: flex;
   gap: 10px;
   z-index: 2;
@@ -471,11 +477,17 @@ p {
 }
 
 .about .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 3rem;
 }
 
 .about-content {
   max-width: 500px;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .about-content h2 {
@@ -504,6 +516,7 @@ p {
   border-radius: 8px;
   background-color: var(--boxes-colors);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  text-align: center;
 }
 
 .value-box:hover {
@@ -523,10 +536,13 @@ p {
 
 @media (min-width: 768px) {
   .about .container {
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: start;
+  }
+  .about-content,
+  .value-box {
+    text-align: start;
   }
   .values {
     grid-template-columns: repeat(2, 1fr);
@@ -591,7 +607,7 @@ p {
   width: 100%;
   max-height: 160px;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   border-radius: 4px;
   margin-bottom: 1rem;
 }
@@ -791,4 +807,4 @@ p {
 
 .year {
   font-weight: normal;
-} /*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
