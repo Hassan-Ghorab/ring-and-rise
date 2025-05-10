@@ -300,7 +300,6 @@ p {
   position: relative;
   height: 100dvh;
   padding: var(--section-padding) 0;
-  background-image: url(../images/hero/hero-bg-1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

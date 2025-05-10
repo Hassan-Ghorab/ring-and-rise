@@ -183,6 +183,9 @@ function showSlide(index) {
   current = index;
 }
 
+// Set the first slide (index 0) as default on page load
+showSlide(0);
+
 function nextSlide() {
   let next = (current + 1) % contents.length;
   showSlide(next);
