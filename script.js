@@ -1,8 +1,12 @@
+const sections = document.querySelectorAll(".section");
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 const navLinksContainer = document.querySelector("ul");
+const allLinks = navLinksContainer.querySelectorAll("a");
+const navLinksEl = document.querySelectorAll(".nav-link");
 const closeBtn = document.getElementById("closeBtn");
 const hiddenElements = document.querySelectorAll(".hidden");
+const images = document.querySelectorAll(".partners-logos img");
 const yearEl = document.querySelector(".year");
 
 menuToggle.addEventListener("click", () => {
@@ -13,22 +17,17 @@ closeBtn.addEventListener("click", () => {
   navLinks.classList.remove("open");
 });
 
-const allLinks = navLinksContainer.querySelectorAll("a");
-
 allLinks.forEach((link) => {
   link.addEventListener("click", () => {
     navLinks.classList.remove("open");
   });
 });
 
-// Get the theme toggle button and the body
 const themeToggleButton = document.getElementById("themeToggle");
 const body = document.body;
 
-// Check if a theme is saved in localStorage
 const savedTheme = localStorage.getItem("theme");
 
-// Apply the saved theme if exists
 if (savedTheme === "dark") {
   body.classList.add("dark-theme");
   themeToggleButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path fill="currentColor" d="M120 40v-8a8 8 0 0 1 16 0v8a8 8 0 0 1-16 0m8 24a64 64 0 1 0 64 64a64.07 64.07 0 0 0-64-64m-69.66 5.66a8 8 0 0 0 11.32-11.32l-8-8a8 8 0 0 0-11.32 11.32Zm0 116.68l-8 8a8 8 0 0 0 11.32 11.32l8-8a8 8 0 0 0-11.32-11.32M192 72a8 8 0 0 0 5.66-2.34l8-8a8 8 0 0 0-11.32-11.32l-8 8A8 8 0 0 0 192 72m5.66 114.34a8 8 0 0 0-11.32 11.32l8 8a8 8 0 0 0 11.32-11.32ZM40 120h-8a8 8 0 0 0 0 16h8a8 8 0 0 0 0-16m88 88a8 8 0 0 0-8 8v8a8 8 0 0 0 16 0v-8a8 8 0 0 0-8-8m96-88h-8a8 8 0 0 0 0 16h8a8 8 0 0 0 0-16"/></svg>`;
@@ -46,7 +45,6 @@ if (savedTheme === "dark") {
               </svg>`;
 }
 
-// Toggle theme when button is clicked
 themeToggleButton.addEventListener("click", () => {
   if (body.classList.contains("dark-theme")) {
     body.classList.remove("dark-theme");
@@ -86,9 +84,6 @@ const observer = new IntersectionObserver(
 
 hiddenElements.forEach((el) => observer.observe(el));
 
-const sections = document.querySelectorAll(".section");
-const navLinksEl = document.querySelectorAll(".nav-link");
-
 // IntersectionObserver to track sections
 const linksObserver = new IntersectionObserver(
   (entries) => {
@@ -119,8 +114,6 @@ const linksObserver = new IntersectionObserver(
 sections.forEach((section) => {
   linksObserver.observe(section);
 });
-
-const images = document.querySelectorAll(".partners-logos img");
 
 const logosObserver = new IntersectionObserver(
   (entries, observer) => {
@@ -159,7 +152,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     bullets.forEach((bullet, i) => {
       bullet.classList.toggle("active", i === index);
-      console.log(`Bullet ${i} active: ${bullet.classList.contains("active")}`); // Debug log
     });
 
     const hero = document.querySelector(".hero");
