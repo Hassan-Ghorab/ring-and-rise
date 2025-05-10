@@ -1,0 +1,22 @@
+:root {
+  --main-bg: #f9fafb;
+  --main-color: #0b7cb8;
+  --hover-color: #095a87;
+  --secondary-color: #1d4ed8;
+  --light-color: #1f2937;
+  --dark-color: #fff;
+  --text-color: #fff;
+  --boxes-colors: #fff;
+  --section-padding-scroll: 1rem;
+  --section-padding: 10rem;
+}
+
+body.dark-theme {
+  --main-bg: #111827;
+  --main-color: #0b7cb8;
+  --secondary-color: #1d4ed8;
+  --light-color: #fff;
+  --dark-color: #000;
+  --text-color: #1f2937;
+  --boxes-colors: #1f2937;
+}

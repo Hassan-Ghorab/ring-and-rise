@@ -98,7 +98,7 @@ window.addEventListener("load", () => {
     content.style.visibility = "visible";
 
     setTimeout(() => loader.remove(), 500);
-  }, 2000);
+  }, 1000);
 });
 
 const sections = document.querySelectorAll(".section");
@@ -129,11 +129,71 @@ const linksObserver = new IntersectionObserver(
     }
   },
   {
-    threshold: 0.6, // 60% of section must be visible
+    threshold: 0.6,
   }
 );
 
-// Observe each section
 sections.forEach((section) => {
   linksObserver.observe(section);
+});
+
+const images = document.querySelectorAll(".partners-logos img");
+
+const logosObserver = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const index = [...images].indexOf(entry.target);
+        setTimeout(() => {
+          entry.target.classList.add("visible");
+        }, index * 350);
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.1,
+  }
+);
+
+images.forEach((img) => logosObserver.observe(img));
+
+const contents = document.querySelectorAll(".hero-content");
+const bullets = document.querySelectorAll(".bullet");
+let current = 0;
+let interval = setInterval(nextSlide, 10000); 
+
+const imagesArray = [
+  "../images/hero/hero-bg-1.jpg", 
+  "../images/hero/hero-bg-2.jpg", 
+  "../images/hero/hero-bg-3.jpg", 
+];
+
+function showSlide(index) {
+  contents.forEach((content, i) => {
+    content.classList.toggle("active", i === index);
+  });
+  bullets.forEach((bullet, i) => {
+    bullet.classList.toggle("active", i === index);
+  });
+
+  // Change the background image based on the index
+  const hero = document.querySelector(".hero");
+  hero.style.backgroundImage = `url(${imagesArray[index]})`;
+
+  current = index;
+}
+
+function nextSlide() {
+  let next = (current + 1) % contents.length;
+  showSlide(next);
+}
+
+// Bullet click event
+bullets.forEach((bullet, index) => {
+  bullet.addEventListener("click", () => {
+    showSlide(index);
+    clearInterval(interval); 
+    interval = setInterval(nextSlide, 10000); 
+  });
 });

@@ -21,7 +21,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -80,93 +80,105 @@
 
       <article id="home" class="hero section hidden from-top">
         <div class="container">
-          <div class="hero-content">
-            <h2>The spark your startup needs to rise and shine</h2>
-            <p>
-              At Ring & Rise, we empower ambitious startups with the tools,
-              talent, and technology they need to break through limits and lead
-              their markets.
-            </p>
-            <button id="openPopupBtn">Book Appointment</button>
+          <div class="hero-slider">
+            <div class="hero-content active">
+              <h2>Welcome To Ring&Rise</h2>
+              <h3>With every ring, your business rises</h3>
+              <p>
+                At Ring & Rise, we empower ambitious startups with the tools,
+                talent, and technology they need to break through limits and
+                lead their markets.
+              </p>
+            </div>
+
+            <div class="hero-content">
+              <h2>Welcome To Ring&Rise</h2>
+              <h3>We help you reach your next milestone</h3>
+              <p>
+                Whether you're seeking leads or closing deals, our support team
+                is here to help you rise above the competition.
+              </p>
+            </div>
+
+            <div class="hero-content">
+              <h2>Welcome To Ring&Rise</h2>
+              <h3>Unlock exclusive off-market opportunities</h3>
+              <p>
+                From motivated seller leads to follow-ups, we deliver results so
+                you can focus on growth.
+              </p>
+            </div>
           </div>
-          <div class="hero-image">
-            <img src="./images/hero.webp" alt="Startup Team Working" />
+
+          <a href="#contact" id="openPopupBtn" class="hero-btn">Book Demo</a>
+
+          <div class="slider-bullets">
+            <button class="bullet active" data-index="0"></button>
+            <button class="bullet" data-index="1"></button>
+            <button class="bullet" data-index="2"></button>
           </div>
         </div>
       </article>
 
-      <section class="values section hidden from-top">
-        <div class="container">
-          <div class="logos">
-            <img
-              src="./images/logos.png"
-              alt="logos of the brands we work with"
-            />
+      <article id="about" class="about section hidden from-top">
+        <article class="partners">
+          <div class="container">
+            <div class="partners-logos">
+              <img src="./images/partners/partner-1.png" />
+              <img src="./images/partners/partner-2.png" />
+              <img src="./images/partners/partner-3.png" />
+              <img src="./images/partners/partner-4.png" />
+              <img src="./images/partners/partner-5.png" />
+              <img src="./images/partners/partner-6.png" />
+            </div>
           </div>
-          <div class="values-container">
+        </article>
+
+        <div class="container">
+          <div class="about-content">
+            <h2>About Us</h2>
+            <h3>Your Trusted Partner in Lead Generation Success</h3>
+            <p>
+              Ring and Rise is a performance-driven lead generation firm based
+              in the USA. We focus on cold calling, virtual assistance, and cold
+              texting, all tailored to secure contracts within just 30 days. Our
+              expert team combines industry knowledge with strategic lead
+              management to guide prospects through the entire sales journey,
+              ensuring dependable and high-quality outcomes. Whether you're
+              aiming to grow your clientele, close deals quicker, or optimize
+              your sales workflow, Ring and Rise is your trusted partner to make
+              it all happen.
+            </p>
+          </div>
+          <div class="values">
             <div class="value-box respect">
-              <h2>Respect</h2>
+              <h2>Skilled Callers</h2>
               <p>
-                When respect permeates your organization, you attract people who
-                respect you. A natural outgrowth of this is that they have
-                respect for the customer.
+                Our team is trained in real estate cold calling and lead
+                generation strategies.
               </p>
             </div>
             <div class="value-box continuous">
-              <h2>Continuous Development</h2>
+              <h2>High-Quality Leads</h2>
               <p>
-                Striving to become better every day. Setup a roadmap to continue
-                to grow within the company.
+                We deliver leads that are verified, interested, and ready to
+                talk to your agents.
               </p>
             </div>
             <div class="value-box authenticity">
-              <h2>Authenticity</h2>
+              <h2>Customized Scripts</h2>
               <p>
-                Customer service that feels fresh and real. Conversations, not
-                robotic scripts, but through personal connection with the
-                customer.
+                We craft cold calling scripts tailored to your target market and
+                real estate goals.
               </p>
             </div>
             <div class="value-box optimism">
-              <h2>Optimism</h2>
+              <h2>Real-Time Support</h2>
               <p>
-                Cold calling can be really challenging at times but creating a
-                healthy work environment where spirits can be raised with a
-                positive company culture that promotes continuous productivity.
+                Stay updated with regular reports and fast customer assistance
+                for your campaigns.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <article id="about" class="about section hidden from-top">
-        <div class="container">
-          <div class="hero-image">
-            <img
-              src="https://thumbs.dreamstime.com/b/man-working-call-centre-portrait-positive-headphones-261810571.jpg"
-              alt="Startup Team Working"
-              class="about-image"
-            />
-          </div>
-          <div class="hero-content">
-            <h2>Empowering Startups to Soar Beyond Limits</h2>
-            <p>
-              Ring & Rise is a dynamic startup accelerator dedicated to fueling
-              the growth of innovative businesses across the USA and beyond. We
-              specialize in providing cutting-edge tools, top-tier talent, and
-              advanced technological solutions tailored to help startups
-              overcome challenges, scale rapidly, and dominate their industries.
-              Our team of seasoned experts works closely with founders to craft
-              strategic roadmaps, optimize operations, and unlock new
-              opportunities for expansion. From securing funding to building
-              high-performing teams, we offer end-to-end support that ensures
-              your startup not only survives but thrives in today’s competitive
-              landscape. Whether you’re looking to refine your product,
-              penetrate new markets, or accelerate your revenue growth, Ring &
-              Rise is your trusted partner to ignite success and achieve lasting
-              impact. Let us help you turn your vision into a market-leading
-              reality.
-            </p>
           </div>
         </div>
       </article>
@@ -176,35 +188,69 @@
         <div class="container">
           <div class="services-grid">
             <div class="service-item">
-              <div class="icon">📞</div>
-              <h3>Cold Calling</h3>
+              <img
+                src="./images/services/service-1.jpg"
+                alt="Seller Lead Generation"
+              />
+              <h3>Seller Lead Generation</h3>
               <p>
-                We dial and generate leads according to the clients
-                qualification standard.
+                We cold call homeowners to identify motivated sellers,
+                distressed property owners, and off-market opportunities.
               </p>
             </div>
             <div class="service-item">
-              <div class="icon">👥</div>
-              <h3>Lead Management</h3>
+              <img
+                src="./images/services/service-2.jpg"
+                alt="Buyer and Investor Outreach"
+              />
+              <h3>Buyer & Investor Outreach</h3>
               <p>
-                A highly skilled individual who works directly with you in your
-                CRM to negotiate, comp, and convert leads to deals for you.
+                We reach out to investors and buyers looking for wholesale
+                deals, fix & flip opportunities, and rental properties.
               </p>
             </div>
             <div class="service-item">
-              <div class="icon">💬</div>
-              <h3>Text Marketing</h3>
+              <img
+                src="./images/services/service-3.png"
+                alt="Appointment Scheduling"
+              />
+              <h3>Appointment Scheduling</h3>
               <p>
-                We text the data you provide us inside of a Launch Control text
-                platform.
+                We book qualified seller and buyer appointments for wholesalers,
+                agents, and investor teams.
               </p>
             </div>
             <div class="service-item">
-              <div class="icon">📊</div>
-              <h3>Data and Skip Tracing</h3>
+              <img
+                src="./images/services/service-4.jpg"
+                alt="Lead Pre-Qualification"
+              />
+              <h3>Lead Pre-Qualification</h3>
               <p>
-                You give us your criteria of data you want pulled and we obtain
-                and skip trace it for you at a competitive price.
+                We vet leads to match your investment criteria—whether it's ARV,
+                motivation, or property condition.
+              </p>
+            </div>
+            <div class="service-item">
+              <img
+                src="./images/services/service-5.jpg"
+                alt="Custom Cold Call Scripts"
+              />
+              <h3>Custom Cold Call Scripts</h3>
+              <p>
+                We craft persuasive real estate call scripts that build rapport,
+                uncover pain points, and boost conversions.
+              </p>
+            </div>
+            <div class="service-item">
+              <img
+                src="./images/services/service-6.jpg"
+                alt="Lead Nurturing and Follow-Up"
+              />
+              <h3>Lead Nurturing & Follow-Up</h3>
+              <p>
+                We run consistent follow-up sequences to stay top-of-mind and
+                convert cold leads into hot opportunities.
               </p>
             </div>
           </div>
@@ -213,7 +259,7 @@
 
       <article
         id="testimonials"
-        class="testimonials"
+        class="testimonials section hidden from-top"
         aria-labelledby="testimonial-heading"
       >
         <h2 id="testimonial-heading">Testimonials</h2>
@@ -230,9 +276,12 @@
               controls
               preload="metadata"
               aria-label="thumbnail to show if the video didn't work"
-              poster="./images/thumbnail-1.png"
+              poster="./images/testimonials/thumbnail-1.png"
             >
-              <source src="./images/video-1.mp4" type="video/mp4" />
+              <source
+                src="./images/testimonials/video-1.mp4"
+                type="video/mp4"
+              />
               Your browser does not support the video tag.
             </video>
             <figcaption>
@@ -247,9 +296,12 @@
               controls
               preload="metadata"
               aria-label="thumbnail to show if the video didn't work"
-              poster="./images/thumbnail-2.jpg"
+              poster="./images/testimonials/thumbnail-2.jpg"
             >
-              <source src="./images/video-2.mp4" type="video/mp4" />
+              <source
+                src="./images/testimonials/video-2.mp4"
+                type="video/mp4"
+              />
               Your browser does not support the video tag.
             </video>
             <figcaption>
@@ -264,9 +316,12 @@
               controls
               preload="metadata"
               aria-label="thumbnail to show if the video didn't work"
-              poster="./images/thumbnail-3.png"
+              poster="./images/testimonials/thumbnail-3.png"
             >
-              <source src="./images/video-3.mp4" type="video/mp4" />
+              <source
+                src="./images/testimonials/video-3.mp4"
+                type="video/mp4"
+              />
               Your browser does not support the video tag.
             </video>
             <figcaption>

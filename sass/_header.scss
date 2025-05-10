@@ -1,0 +1,164 @@
+.navbar {
+  background: var(--main-bg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 60px;
+}
+
+.menu-toggle {
+  background: none;
+  color: var(--light-color);
+  border: none;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+/* Nav Links */
+.main-nav,
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.nav-buttons {
+  gap: 2rem;
+}
+
+.nav-links {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100%;
+  background: var(--main-bg);
+  color: var(--light-color);
+  padding: 5rem 2rem;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.nav-links.open {
+  right: 0;
+}
+
+.nav-links ul {
+  list-style: none;
+}
+
+.nav-links li {
+  margin-bottom: 2rem;
+  transition: 0.5s;
+}
+
+.nav-links li:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: 4px 4px 0 0 var(--light-color);
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.nav-links a {
+  color: var(--light-color);
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links a:active,
+.nav-links a:focus {
+  color: var(--hover-color);
+}
+
+.nav-link.active {
+  color: var(--main-color);
+  transform: translate(-5px, -5px);
+  box-shadow: 4px 4px 0 0 var(--light-color);
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 20px;
+  color: inherit;
+  color: var(--main-color);
+  transform: translate(-5px, -5px);
+  box-shadow: 4px 4px 0 0 var(--light-color);
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: var(--white-color);
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.menu-toggle,
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.theme-toggle svg {
+  width: 30px;
+  height: 30px;
+}
+
+/* Desktop view */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    padding: 0;
+    display: block;
+    color: var(--black-color);
+  }
+
+  .nav-links ul {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-links li {
+    margin: 0;
+  }
+
+  .nav-links a {
+    font-size: 1.7rem;
+    font-weight: 500;
+  }
+
+  .close-btn {
+    display: none;
+  }
+}
