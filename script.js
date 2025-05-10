@@ -158,42 +158,45 @@ const logosObserver = new IntersectionObserver(
 
 images.forEach((img) => logosObserver.observe(img));
 
-const contents = document.querySelectorAll(".hero-content");
-const bullets = document.querySelectorAll(".bullet");
-let current = 0;
-let interval = setInterval(nextSlide, 10000);
+document.addEventListener("DOMContentLoaded", () => {
+  const contents = document.querySelectorAll(".hero-content");
+  const bullets = document.querySelectorAll(".bullet");
+  let current = 0;
+  let interval = setInterval(nextSlide, 10000);
 
-const imagesArray = [
-  "images/hero/hero-bg-1.jpg", 
-  "images/hero/hero-bg-2.jpg",
-  "images/hero/hero-bg-3.jpg",
-];
+  const imagesArray = [
+    "images/hero/hero-bg-1.jpg",
+    "images/hero/hero-bg-2.jpg",
+    "images/hero/hero-bg-3.jpg",
+  ];
 
-function showSlide(index) {
-  contents.forEach((content, i) => {
-    content.classList.toggle("active", i === index);
-  });
-  bullets.forEach((bullet, i) => {
-    bullet.classList.toggle("active", i === index);
-  });
+  function showSlide(index) {
+    contents.forEach((content, i) => {
+      content.classList.toggle("active", i === index);
+    });
+    bullets.forEach((bullet, i) => {
+      bullet.classList.toggle("active", i === index);
+      console.log(`Bullet ${i} active: ${bullet.classList.contains("active")}`); // Debug log
+    });
 
-  const hero = document.querySelector(".hero");
-  hero.style.backgroundImage = `url(${imagesArray[index]})`;
+    const hero = document.querySelector(".hero");
+    hero.style.backgroundImage = `url(${imagesArray[index]})`;
 
-  current = index;
-}
+    current = index;
+  }
 
-showSlide(0);
+  showSlide(0);
 
-function nextSlide() {
-  let next = (current + 1) % contents.length;
-  showSlide(next);
-}
+  function nextSlide() {
+    let next = (current + 1) % contents.length;
+    showSlide(next);
+  }
 
-bullets.forEach((bullet, index) => {
-  bullet.addEventListener("click", () => {
-    showSlide(index);
-    clearInterval(interval);
-    interval = setInterval(nextSlide, 10000);
+  bullets.forEach((bullet, index) => {
+    bullet.addEventListener("click", () => {
+      showSlide(index);
+      clearInterval(interval);
+      interval = setInterval(nextSlide, 10000);
+    });
   });
 });
