@@ -126,7 +126,8 @@ p {
 }
 
 @keyframes floatUpDown {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -590,7 +591,7 @@ p {
   width: 100%;
   max-height: 160px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 4px;
   margin-bottom: 1rem;
 }
@@ -790,4 +791,4 @@ p {
 
 .year {
   font-weight: normal;
-}/*# sourceMappingURL=main.css.map */
+} /*# sourceMappingURL=main.css.map */
