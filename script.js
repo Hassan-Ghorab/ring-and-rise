@@ -164,9 +164,9 @@ let current = 0;
 let interval = setInterval(nextSlide, 10000);
 
 const imagesArray = [
-  "images/hero/hero-bg-1.jpg",
-  "images/hero/hero-bg-2.jpg",
-  "images/hero/hero-bg-3.jpg",
+  "/images/hero/hero-bg-1.jpg",
+  "/images/hero/hero-bg-2.jpg",
+  "/images/hero/hero-bg-3.jpg",
 ];
 
 function showSlide(index) {
@@ -177,7 +177,6 @@ function showSlide(index) {
     bullet.classList.toggle("active", i === index);
   });
 
-  // Change the background image based on the index
   const hero = document.querySelector(".hero");
   hero.style.backgroundImage = `url(${imagesArray[index]})`;
 
@@ -189,7 +188,6 @@ function nextSlide() {
   showSlide(next);
 }
 
-// Bullet click event
 bullets.forEach((bullet, index) => {
   bullet.addEventListener("click", () => {
     showSlide(index);
