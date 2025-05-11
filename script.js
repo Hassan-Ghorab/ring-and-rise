@@ -183,9 +183,8 @@ window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
   const content = document.getElementById("main-content");
 
-  // Once the page is completely loaded
-  loader.style.display = "none"; // Hide the loader
-  content.style.visibility = "visible"; // Show the main content
+  loader.style.display = "none";
+  content.style.visibility = "visible";
 });
 
 // Modal and success message references
@@ -193,47 +192,39 @@ const modal = document.getElementById("calendlyModal");
 const modalContent = document.getElementById("modalContent");
 const successMessage = document.getElementById("successMessage");
 
-// Show modal on button click
 document.getElementById("showCalendlyBtn").addEventListener("click", () => {
   modal.style.display = "block";
 });
 
-// Optionally open modal via another button (for demo or another trigger)
 document.getElementById("openCalendlyDemo").addEventListener("click", () => {
   modal.style.display = "block";
 });
 
-// Close modal from "×" button
 document.getElementById("closeCalendly").addEventListener("click", () => {
   modal.style.display = "none";
 });
 
-// Close modal when clicking outside the content (on overlay)
 window.addEventListener("click", function (e) {
   if (e.target === modal) {
     modal.style.display = "none";
   }
 });
 
-// Listen for messages from the Calendly iframe (e.g., after booking)
+
 window.addEventListener("message", function (e) {
-  // Optional: restrict by origin for added safety
   if (e.origin !== "https://calendly.com") return;
 
-  // Check for Calendly's event_scheduled event
   if (
     e.data &&
     typeof e.data === "object" &&
     e.data.event === "calendly.event_scheduled"
   ) {
-    // Show success message
     successMessage.classList.add("show");
 
-    // Close the modal after a brief success message display
     setTimeout(() => {
       successMessage.classList.remove("show");
-      modal.style.display = "none"; // Close the modal after success
-      window.location.reload(); // Reload the page after scheduling
-    }, 4000); // Show message for 4 seconds
+      modal.style.display = "none";
+      window.location.reload();
+    }, 4000);
   }
 });

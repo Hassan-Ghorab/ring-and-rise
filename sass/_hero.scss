@@ -73,6 +73,8 @@
 
 .hero-btn:hover {
   background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .hero-slider {
