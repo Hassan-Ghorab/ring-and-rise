@@ -240,15 +240,3 @@ window.addEventListener("message", function (e) {
     }, 4000); // Show message for 4 seconds
   }
 });
-
-// Wait for the Calendly script to load before initializing
-const script = document.getElementById("calendlyScript");
-script.onload = function () {
-  document
-    .getElementById("showCalendlyBtn")
-    .addEventListener("click", function () {
-      Calendly.initPopupWidget({
-        url: "https://calendly.com/ghorab-trying/new-meeting",
-      });
-    });
-};
