@@ -191,6 +191,7 @@ window.addEventListener("load", () => {
   }, 500);
 });
 
+// Modal and success message references
 const modal = document.getElementById("calendlyModal");
 const modalContent = document.getElementById("modalContent");
 const successMessage = document.getElementById("successMessage");
@@ -200,36 +201,54 @@ document.getElementById("showCalendlyBtn").addEventListener("click", () => {
   modal.style.display = "block";
 });
 
+// Optionally open modal via another button (for demo or another trigger)
 document.getElementById("openCalendlyDemo").addEventListener("click", () => {
   modal.style.display = "block";
 });
 
-// Close modal from "×"
+// Close modal from "×" button
 document.getElementById("closeCalendly").addEventListener("click", () => {
   modal.style.display = "none";
 });
 
-// Close modal when clicking outside the content
+// Close modal when clicking outside the content (on overlay)
 window.addEventListener("click", function (e) {
   if (e.target === modal) {
     modal.style.display = "none";
   }
 });
 
-// Listen only to messages from Calendly
+// Listen for messages from the Calendly iframe (e.g., after booking)
 window.addEventListener("message", function (e) {
-  // Optional: restrict by origin if you want extra safety
+  // Optional: restrict by origin for added safety
   if (e.origin !== "https://calendly.com") return;
 
-  // Defensive check before accessing nested properties
+  // Check for Calendly's event_scheduled event
   if (
     e.data &&
     typeof e.data === "object" &&
     e.data.event === "calendly.event_scheduled"
   ) {
+    // Show success message
     successMessage.classList.add("show");
+
+    // Close the modal after a brief success message display
     setTimeout(() => {
       successMessage.classList.remove("show");
-    }, 4000);
+      modal.style.display = "none"; // Close the modal after success
+      window.location.reload(); // Reload the page after scheduling
+    }, 4000); // Show message for 4 seconds
   }
 });
+
+// Wait for the Calendly script to load before initializing
+const script = document.getElementById("calendlyScript");
+script.onload = function () {
+  document
+    .getElementById("showCalendlyBtn")
+    .addEventListener("click", function () {
+      Calendly.initPopupWidget({
+        url: "https://calendly.com/ghorab-trying/new-meeting",
+      });
+    });
+};
