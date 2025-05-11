@@ -180,15 +180,12 @@ const year = new Date().getFullYear();
 yearEl.innerText = year;
 
 window.addEventListener("load", () => {
-  setTimeout(() => {
-    const loader = document.getElementById("loader");
-    const content = document.getElementById("main-content");
+  const loader = document.getElementById("loader");
+  const content = document.getElementById("main-content");
 
-    loader.style.opacity = "0";
-    content.style.visibility = "visible";
-
-    setTimeout(() => loader.remove(), 500);
-  }, 500);
+  // Once the page is completely loaded
+  loader.style.display = "none"; // Hide the loader
+  content.style.visibility = "visible"; // Show the main content
 });
 
 // Modal and success message references
