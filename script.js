@@ -188,5 +188,48 @@ window.addEventListener("load", () => {
     content.style.visibility = "visible";
 
     setTimeout(() => loader.remove(), 500);
-  }, 1000);
+  }, 500);
+});
+
+const modal = document.getElementById("calendlyModal");
+const modalContent = document.getElementById("modalContent");
+const successMessage = document.getElementById("successMessage");
+
+// Show modal on button click
+document.getElementById("showCalendlyBtn").addEventListener("click", () => {
+  modal.style.display = "block";
+});
+
+document.getElementById("openCalendlyDemo").addEventListener("click", () => {
+  modal.style.display = "block";
+});
+
+// Close modal from "×"
+document.getElementById("closeCalendly").addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// Close modal when clicking outside the content
+window.addEventListener("click", function (e) {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
+// Listen only to messages from Calendly
+window.addEventListener("message", function (e) {
+  // Optional: restrict by origin if you want extra safety
+  if (e.origin !== "https://calendly.com") return;
+
+  // Defensive check before accessing nested properties
+  if (
+    e.data &&
+    typeof e.data === "object" &&
+    e.data.event === "calendly.event_scheduled"
+  ) {
+    successMessage.classList.add("show");
+    setTimeout(() => {
+      successMessage.classList.remove("show");
+    }, 4000);
+  }
 });

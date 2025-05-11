@@ -57,11 +57,11 @@
 .hero-content p {
   max-width: 500px;
   font-size: 1.4rem;
-  margin: 0 auto 2rem;
+  margin: 0 auto;
 }
 
 .hero-btn {
-  background-color: var(--main-color);
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
   color: #fff;
   padding: 1.5rem 2rem;
   border: none;
@@ -72,7 +72,7 @@
 }
 
 .hero-btn:hover {
-  background-color: var(--hover-color);
+  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
 }
 
 .hero-slider {
