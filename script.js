@@ -8,6 +8,7 @@ const closeBtn = document.getElementById("closeBtn");
 const hiddenElements = document.querySelectorAll(".hidden");
 const images = document.querySelectorAll(".partners-logos img");
 const yearEl = document.querySelector(".year");
+const goToTopButton = document.getElementById("goToTopBtn");
 
 menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("open");
@@ -187,7 +188,21 @@ window.addEventListener("load", () => {
   content.style.visibility = "visible";
 });
 
-// Modal and success message references
+window.onscroll = function () {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    goToTopButton.style.display = "block";
+  } else {
+    goToTopButton.style.display = "none";
+  }
+};
+
+goToTopButton.onclick = function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+
 const modal = document.getElementById("calendlyModal");
 const modalContent = document.getElementById("modalContent");
 const successMessage = document.getElementById("successMessage");
@@ -209,7 +224,6 @@ window.addEventListener("click", function (e) {
     modal.style.display = "none";
   }
 });
-
 
 window.addEventListener("message", function (e) {
   if (e.origin !== "https://calendly.com") return;
